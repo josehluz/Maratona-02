@@ -12,6 +12,8 @@ module.exports = {
             name: req.body.name,
             "daily-hours": req.body["daily-hours"],
             "total-hours": req.body["total-hours"],
+            "name-contact": req.body["name-contact"],
+            "job-details": req.body["job-details"],
             created_at: Date.now() // atribuindo data de hoje
         });  
 
@@ -39,10 +41,11 @@ module.exports = {
         const jobId = req.params.id
   
         const updatedJob = {
-            ...job,
             name: req.body.name,
             "total-hours": req.body["total-hours"],
             "daily-hours": req.body["daily-hours"],
+            "name-contact": req.body["name-contact"],
+            "job-details": req.body["job-details"],
         }
 
         await Job.update(updatedJob, jobId)

@@ -27,6 +27,7 @@
   <body id="page-index">
     <header class="page-header">
       <div class="container">
+        
         <section id="top" class="animate-up">
           <h2 class="sr-only">Homepage</h2>
           <img id="logo" src="/images/logo.svg" alt="Logo" />
@@ -72,7 +73,7 @@
         </section>
       </div>
     </header>
-
+    <div class="header-waves"> 
     <div class="container">
       <main class="animate-up delay-2">
         <h1 class="sr-only">Trabalhos</h1>
@@ -116,22 +117,29 @@
               </div>
             </div>
             <!-- end card -->
-
-
-
           <% }) %> 
-
-          
-
         </div>
         <!-- end cards -->
       </main>
-    </div>
+    </div>    
+    <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+    viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+          <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+          <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+          <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+        </g>
+      </svg>
+      <footer class="footer-waves">Daniel Österman | 2019 | Free to use</footer></div> 
     <!-- end container -->
-
     <div class="modal-wrapper">
       <div class="modal">
         <img src="/images/trash-48.svg" alt="Excluir Job" title="Excluir Job" />
+        
         <h3>Excluir Job</h3>
         <p>Quer mesmo excluir esse job? <br/>
         Ele será apagado para sempre.  
@@ -146,11 +154,20 @@
             form="delete-job">Excluir Job</button>
         </footer>
       </div>
+      
       <form 
         method="post" 
         action="/job/delete" 
         id="delete-job"></form>
     </div>
     <!-- end modal-wrapper -->
-  </body>
+    <!-- initial Waves -->
+     <!--Waves Container-->
+
+
+
+      <!--Waves end-->
+      <!--Header ends-->
+
+    </body>
 </html>

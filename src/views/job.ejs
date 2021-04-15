@@ -34,11 +34,16 @@
             <legend>Dados do Job</legend>
             <div class="separator light"></div>
 
-            <div class="input-wrapper">
-              <label for="name">Nome do Job</label>
-              <input type="text" id="name" name="name" />
+            <div class="input-group">
+              <div class="input-wrapper">
+                <label for="name">Nome do Job</label>
+                <input type="text" id="name" name="name" />
+              </div>
+              <div class="input-wrapper">
+                <label for="name-contact">Nome do Contato</label>
+                <input type="text" id="name-contact" name="name-contact" />
+              </div>
             </div>
-
             <div class="input-group">
               <div class="input-wrapper">
                 <label for="daily-hours">Quantas horas <br/>
@@ -58,6 +63,10 @@
                   id="total-hours" 
                   name="total-hours" />
               </div>
+            </div>
+            <div class="input-wrapper-details">
+              <label for="job-details">Detalhes do Job</label>
+              <textarea wrap="hard" class="job-details" type="text" id="job-details" name="job-details"></textarea>
             </div>
           </fieldset>
     

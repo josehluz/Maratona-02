@@ -38,7 +38,8 @@ label {
   margin-bottom: 1rem;
 }
 
-input {
+input, textarea {
+  resize: none;
   font-family: IBM Plex Sans;
   font-weight: 500;
 
@@ -61,3 +62,11 @@ input {
 .input-wrapper {
   width: 50%;
 }
+.input-wrapper-details {
+  margin-top: 1.5rem;
+  width: 100%;
+}
+.job-details {
+  height: 200px;
+}
+

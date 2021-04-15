@@ -1,17 +1,20 @@
-const Database = require('../db/config')
+const Database = require('../db/config');
 
 module.exports = {
     async get(){
-        const db = await Database()
+        const db = await Database();
 
-        const jobs = await db.all(`SELECT * FROM jobs`)
+        const jobs = await db.all(`SELECT * FROM jobs`);
 
-        await db.close()
+        await db.close();
+
         return jobs.map(job => ({
             id: job.id,
             name: job.name,
             "daily-hours": job.daily_hours,
             "total-hours": job.total_hours,
+            "name-contact": job.name_contact,
+            "job-details": job.job_details,
             created_at: job.created_at
         }))
     },
@@ -22,11 +25,13 @@ module.exports = {
         await db.run(`UPDATE jobs SET
         name = "${updatedJob.name}",
         daily_hours = ${updatedJob["daily-hours"]},
-        total_hours = ${updatedJob["total-hours"]}
+        total_hours = ${updatedJob["total-hours"]},
+        name_contact = "${updatedJob["name-contact"]}",
+        job_details = "${updatedJob["job-details"]}"
         WHERE id = ${jobId}
         `)
 
-        await db.close()
+        await db.close();
     },
 
     async delete(id) {
@@ -44,11 +49,15 @@ module.exports = {
             name,
             daily_hours,
             total_hours,
+            name_contact,
+            job_details,
             created_at
         ) VALUES (
             "${newJob.name}",
             ${newJob["daily-hours"]},
             ${newJob["total-hours"]},
+            "${newJob["name-contact"]}",
+            "${newJob["job-details"]}",
             ${newJob.created_at}
         )`)
 

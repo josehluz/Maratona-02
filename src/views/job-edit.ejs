@@ -38,17 +38,26 @@
           <fieldset>
             <legend>Dados do Job</legend>
             <div class="separator light"></div>
-
-            <div class="input-wrapper">
-              <label for="name">Nome do Job</label>
-              <input 
-                type="text" 
-                id="name" 
-                name="name"
-                value="<%= job.name %>"
-              />
+            <div class="input-group">
+              <div class="input-wrapper">
+                <label for="name">Nome do Job</label>
+                <input 
+                  type="text" 
+                  id="name" 
+                  name="name"
+                  value="<%= job.name %>"
+                />
+              </div>
+              <div class="input-wrapper">
+                <label for="name">Nome do Contato</label>
+                <input 
+                  type="text" 
+                  id="name-contact" 
+                  name="name-contact"
+                  value="<%= job["name-contact"] %>"
+                />
+              </div>
             </div>
-
             <div class="input-group">
               <div class="input-wrapper">
                 <label for="daily-hours">Quantas horas <br/>
@@ -70,6 +79,16 @@
                   name="total-hours"
                   value="<%= job["total-hours"] %>" />
               </div>
+            </div>
+            <div class="input-wrapper-details">
+              <label for="job-details">Detalhes do Job</label>
+              <textarea
+                wrap="hard"
+                class="job-details"
+                type="text"
+                id="job-details"
+                name="job-details"
+                ><%= job["job-details"] %></textarea>
             </div>
           </fieldset>
     

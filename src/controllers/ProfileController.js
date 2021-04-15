@@ -26,7 +26,7 @@ module.exports = {
 
         const profile = await Profile.get()
         await Profile.update({ 
-            ... profile,
+            ...profile,
             ...req.body,
             "value-hour": valueHour
         })
